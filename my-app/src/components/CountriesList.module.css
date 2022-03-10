@@ -1,0 +1,42 @@
+.input {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-size: 110%;
+}
+
+.select {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.countryList {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.listWrap {
+  height: 80vh;
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .input {
+    width: 90%;
+  }
+
+  .select {
+    width: 90%;
+    margin-bottom: 0.5rem;
+  }
+
+  .listWrap {
+    height: auto;
+  }
+}
