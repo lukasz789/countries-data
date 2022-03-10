@@ -8,6 +8,7 @@ import { CountriesData, SelectValue } from "../types";
 import CountryListElement from "./CountryListElement";
 
 import classes from "./CountriesList.module.css";
+import LoadingSpinner from "./UI/LoadingSpinner";
 
 import Select, {
   // ActionMeta,
@@ -55,10 +56,7 @@ const CountriesList: React.FC = () => {
 
   const { loading, error, data } = useQuery<CountriesData>(getCountriesQuery);
 
-  if (loading || !data)
-    return (
-      <p style={{ textAlign: "center", fontWeight: "bold" }}>Loading....</p>
-    );
+  if (loading || !data) return <LoadingSpinner />;
 
   if (error)
     return (

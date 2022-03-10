@@ -7,6 +7,7 @@ import { getCountryDetailsQuery } from "../queries/queries";
 import { CountryDetails, QueryVariableCountryDetails } from "../types";
 
 import classes from "./Country.module.css";
+import LoadingSpinner from "./UI/LoadingSpinner";
 
 const Country: React.FC = () => {
   const params = useParams();
@@ -20,10 +21,7 @@ const Country: React.FC = () => {
     },
   });
 
-  if (loading || !data)
-    return (
-      <p style={{ textAlign: "center", fontWeight: "bold" }}>Loading....</p>
-    );
+  if (loading || !data) return <LoadingSpinner />;
 
   if (error)
     return (
